@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Poppins;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url("../assets/pattern.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  background: #00bfa6;
+  padding: 5px 25% 5px 25%;
+  color: white;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 5px;
+  filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(87deg)
+    brightness(119%) contrast(119%);
+}
+
+.caption {
+  margin-left: 5px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper .container {
+  width: 50%;
+  border-radius: 8px;
+  margin: 16px;
+  background: none;
+  padding: 16px;
+  flex-grow: 1;
+  height: fit-content;
+  min-height: 250px;
+}
+
+.container-header {
+  margin-left: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  width: 85%;
+}
+
+.right {
+  width: 15%;
+}
+
+.item {
+  border-radius: 16px;
+  margin-top: 16px;
+  padding: 12px 24px 12px 24px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.item > .inner h2 {
+  margin-bottom: unset;
+}
+
+.item > .inner p {
+  margin-top: 5px;
+}
+
+.form {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  height: 300px;
+  border-radius: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-size: 18;
+  font-weight: lighter;
+}
+
+.shadow {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+input[type="text"],
+input[type="number"] {
+  font-family: Poppins;
+  background: none;
+  border: 2px solid #292929;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.btn-submit {
+  width: 100%;
+  border: none;
+  font-family: Poppins;
+  border-radius: 16px;
+  padding: 12px 24px;
+  border: none;
+  background-color: #00bfa6;
+  color: white;
+  font-size: 24px;
+  margin-top: auto;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: #007464;
+  color: white;
+}
+
+.btn-add {
+  width: 100%;
+  border: none;
+  font-family: Poppins;
+  border-radius: 50px;
+  padding: 10px 10px;
+  border: 2px solid #00bfa6;
+  color: #00bfa6;
+  background: none;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background: #00bfa6;
+  color: white;
+}
+
+input[type="text"],
+input[type="number"],
+.btn-submit:focus {
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-title {
+  margin: auto 0;
+}
+
+.check-button {
+  background: url("../assets/check-outline.svg") no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.check-button:hover {
+  background: url("../assets/check-solid.svg") no-repeat;
+  background-size: contain;
+}
+
+.trash-button {
+  background: url("../assets/trash-outline.svg") no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-left: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+.trash-button:hover {
+  background: url("../assets/trash-fill.svg") no-repeat;
+  background-size: contain;
+}
+
+.undo-button {
+  background: url("../assets/undo.svg") no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.undo-button:hover {
+  background: url("../assets/undo-hover.svg") no-repeat;
+  background-size: contain;
+}
+
+.check-button:focus,
+.trash-button {
+  outline: none;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 26%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 48%;
+  border: none;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  min-height: 80%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+/* Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 44px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: green;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #00bfa6;
+  color: white;
+  border: none;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 5px;
+    color: white;
+  }
+
+  .wrapper {
+    margin: 0;
+  }
+
+  .left {
+    width: 75%;
+  }
+
+  .right {
+    width: 25%;
+  }
+
+  .wrapper .container {
+    width: 100%;
+  }
+
+  .list-item {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 95%;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .modal {
+    left: 2.5%;
+  }
+
+  .modal-content {
+    width: 95%;
+  }
+}

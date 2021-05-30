@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookshelf by Novan Junaedi</title>
+    <link rel="shortcut icon" href="./assets/books-stack.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <img class="logo" src="./assets/books-stack.svg" alt="list icon">
+            <h1>My Bookshelf</h1>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="left">
+                    <div class="row">
+                        <img src="./assets/list.svg" width="20" height="auto" alt="list icon">
+                        <h2 class="container-header">Book List</h2>
+                    </div>
+                </div>
+                <div class="right">
+                    <button id="addBtn" class="btn-add">Add</button>
+                </div>
+            </div>
+            <hr size="1">
+            <div class="list-item" id="books"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <img src="./assets/check.svg" width="20" height="auto" alt="check icon">
+                <h2 class="container-header">Finished Reading</h2>
+            </div>
+            <hr size="1">
+            <div class="list-item" id="finished-books"></div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Add New Book</h2>
+                </div>
+                <div class="modal-body">
+                    <form class="form" action="#" id="form">
+                        <div class="form-group form-title">
+                            <label for="title">Tittle</label>
+                            <input type="text" id="title" name="title" placeholder="Book title..." required>
+                        </div>
+                        <div class="form-group form-title">
+                            <label for="title">Author</label>
+                            <input type="text" id="author" name="author" placeholder="Author name..." required>
+                        </div>
+                        <div class="form-group form-title">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" name="year" placeholder="Example: 2021" required>
+                        </div>
+                        <input type="submit" value="Save" name="Submit" class="btn-submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./js/data.js"></script>
+    <script src="./js/dom.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>
